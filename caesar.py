@@ -39,13 +39,13 @@ def decode(alphabet, text, search_range):
     search_range = int(search_range)
   except Exception:
     print("range must be an integer!")
-    uncaesar(alphabet, input("text: "), input("range: "))
+    decode(alphabet, input("text: "), input("range: "))
 
   best = ["", 0, 0] # [text, shift, number of matches]
   search_range = abs(search_range)
   for i in range(search_range):
-    positive_s = caesar(alphabet, text, i)
-    negative_s = caesar(alphabet, text, -i)
+    positive_s = encode(alphabet, text, i)
+    negative_s = encode(alphabet, text, -i)
 
     # process the shifted text...
     cm_p = count_matches(positive_s.lower())
