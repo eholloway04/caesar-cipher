@@ -12,7 +12,7 @@ def encode(alphabet, text, shifts):
     shifts = int(shifts)
   except Exception:
     print("shifts must be an integer!")
-    encode(input("text: "), input("shifts: "))
+    encode(alphabet, input("text: "), input("shifts: "))
 
   # simplify the number of shifts...
   multiplier = -1 if shifts < 0 else 1
@@ -59,3 +59,6 @@ def decode(alphabet, text, search_range):
       print(f"new best: {best}")
 
   return best
+
+# encode(alphabet, input("text: "), input("shifts: "))
+# decode(alphabet, input("text: "), input("range: "))
